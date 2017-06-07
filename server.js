@@ -33,7 +33,7 @@ function loadMessages(socket, user, amount) {
 				},
 				//offset: count-amount,
 				limit: amount,
-				order: 'timestamp DESC'
+				order: 'ts DESC'
 			}).then(function (messages) {
 				socket.emit('message', messages);
 			});

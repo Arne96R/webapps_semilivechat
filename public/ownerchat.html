@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Client Chat</title>
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/styles.css">
+		<style>
+			.well {
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container"><div class="row">
+				<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 well">
+					<a class="btn btn-default" href="/index.html">Go back to homepage</a>
+
+					<h1 class="chat-name text-center"></h1>
+
+					<form id="load-messages">
+						<div class="form-group">
+							<input class="btn btn-default btn-block" type="submit" value="^ Load earlier messages ^"/>
+						</div>
+					</form>
+
+					<ul class="messages list-group">
+						<!-- //here comes the messages and stuff-->	
+					</ul>
+
+					<form id="message-form">
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-comment"></i>
+								</span>
+								<input type="text" name="message" class="form-control"/>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<input class="btn btn-custom btn-block" type="submit" value="Send message"/>
+							<script>
+    							document.write('<a class href="' + document.referrer + '">Back to overview</a>');
+							</script>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<script src="/js/jquery-2.2.4.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/js/moment.js"></script>
+		<script src="/js/QueryParams.js"></script>
+		<script src="/js/messagecontrol.js"></script>
+	</body>
+</html>

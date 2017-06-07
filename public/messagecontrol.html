@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<div>
+<head>
+	<title>Chat Control</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="/js/QueryParams.js"></script>
+    <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/messagecontrol.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/moment.js"></script>
+
+</head>
+
+<body>
+    <div id="content">
+        <h1>Ongoing Chats</h1>
+        <div class="well">
+            <ul class="list-group">
+                <li class="list-group-item"><a class="caty" id="unansweredChats">Unanswered chats</a><ul id="unansweredChatsArt"></ul></li>
+                <li class="list-group-item"><a class="caty" id="answeredChats">Answered chats</a><ul id="answeredChatsArt"></ul></li>
+            </ul>
+        </div>
+        <h2>Archived chats</h2>
+        <div class="well">
+            <ul class="list-group">
+                <li class="list-group-item"><a class="caty" id="archivedChats">Closed chats</a><ul id="archivedChatsArt"></ul></li>
+            </ul>
+        </div>
+        <a href="/">Home</a>
+    </div>
+</body>
+</div>
+</html>

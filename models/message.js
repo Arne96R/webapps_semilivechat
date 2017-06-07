@@ -26,7 +26,7 @@ module.exports = function (sequelize, DataTypes) {
 			}
 		},
 		timestamp: {
-			type: DataTypes.INTEGER,
+			type: DataTypes.BIGINT,
 			allowNull: false,
 			validate: {}
 		}

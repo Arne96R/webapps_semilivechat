@@ -25,7 +25,7 @@ module.exports = function (sequelize, DataTypes) {
 				len: [1,200]
 			}
 		},
-		timestamp: {
+		ts: {
 			type: DataTypes.BIGINT,
 			allowNull: false,
 			validate: {}

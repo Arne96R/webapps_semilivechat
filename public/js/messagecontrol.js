@@ -30,7 +30,7 @@ $( document ).ready(function () {
 
 
 					function createMessage(message) {
-						var momentTimestamp = moment.utc(message.timestamp);
+						var momentTimestamp = moment.utc(message.ts);
 
 						if (message.sender == "server") {
 							var $message = jQuery('<li class="list-group-item" style="text-align: right"></li>');	
@@ -60,7 +60,7 @@ $( document ).ready(function () {
 								}
 							} else {
 								console.log('New message:');
-								console.log(moment.utc(message.timestamp).local().format('DD MMM YYYY HH:mm') + ' - ' + message.text);
+								console.log(moment.utc(message.ts).local().format('DD MMM YYYY HH:mm') + ' - ' + message.text);
 								$messages.append(createMessage(message));
 							};
 						});
@@ -79,7 +79,7 @@ $( document ).ready(function () {
 								user: user,
 								sender: "server",
 								userName: "server",
-								timestamp: moment().valueOf()
+								ts: moment().valueOf()
 							});
 
 							console.log("msg sent");

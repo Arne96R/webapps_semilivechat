@@ -11,7 +11,7 @@ function getName() {
 };
 
 function createMessage(user, message) {
-	var momentTimestamp = moment.utc(message.timestamp);
+	var momentTimestamp = moment.utc(message.ts);
 
 	if (message.sender == "client") {
 		var $message = jQuery('<li class="list-group-item" style="text-align: right"></li>');	
@@ -44,7 +44,7 @@ socket.on('message', function(message) {
 		}
 	} else {
 		console.log('New message:');
-		console.log(moment.utc(message.timestamp).local().format('DD MMM YYYY HH:mm') + ' - ' + message.text);
+		console.log(moment.utc(message.ts).local().format('DD MMM YYYY HH:mm') + ' - ' + message.text);
 		$messages.append(createMessage(getName(), message));
 	};
 });
@@ -60,7 +60,7 @@ $form.on('submit', function(event) {
 		user: cookie,
 		sender: "client",
 		userName: cookie.substr(0,cookie.length-42),
-		timestamp: moment().valueOf()
+		ts: moment().valueOf()
 	});
 
 	console.log("msg sent");

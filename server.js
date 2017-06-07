@@ -170,7 +170,7 @@ io.on('connection', function(socket) {
 
 
 	socket.on('message', function(message) {
-		console.log('Message received: ' + message.user + ' @ ' + moment.utc(message.timestamp).local().format('D/M/YYYY HH:mm') + ': ' + message.text);
+		console.log('Message received: ' + message.user + ' @ ' + moment.utc(message.ts).local().format('D/M/YYYY HH:mm') + ': ' + message.text);
 		socket.emit('message', message);
 		db.message.create(message);
 		db.user.update({isAnswered: false}, {where: {name: message.user}});
